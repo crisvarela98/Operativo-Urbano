@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>OPERATIVO URBANO - DOOM EDITION</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- MENU PRINCIPAL -->
+  <div id="menu" class="menu-doom">
+    <div class="menu-content">
+      <h1 class="doom-title">OPERATIVO URBANO</h1>
+      <div class="doom-ascii">▀█▀ ▀█▀ ▀█▀</div>
+      <p class="menu-text">OPERACIÓN DE RESCATE TÁCTICO</p>
+      <button id="startBtn" class="doom-button">► INICIAR ◄</button>
+      <p class="menu-text small">Use controles en pantalla</p>
+    </div>
+  </div>
+
+  <!-- JUEGO DOOM -->
+  <div id="gameUI" class="hidden doom-ui">
+    <div class="game-container">
+      <canvas id="gameCanvas"></canvas>
+      
+      <!-- PANEL INFERIOR DOOM -->
+      <div class="doom-hud">
+        <div class="hud-left">
+          <div class="hud-stat">SOSPECHOSOS<br><span id="susCount">0</span></div>
+          <div class="hud-stat">REHENES<br><span id="hostCount">0</span></div>
+        </div>
+        <div class="hud-center">OPERATIVO EN CURSO</div>
+        <div class="hud-right">100%</div>
+      </div>
+
+      <!-- CONTROLES -->
+      <div class="doom-controls">
+        <button id="btnOrden" class="btn-doom red">RENDIRSE</button>
+        <button id="btnEsposar" class="btn-doom yellow">ESPOSAR</button>
+        <button id="btnPuerta" class="btn-doom green">PUERTA</button>
+        <button id="btnLinterna" class="btn-doom blue">LUZ</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

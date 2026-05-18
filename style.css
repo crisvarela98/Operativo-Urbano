@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', monospace;
+  background: #000;
+  color: #ffff00;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hidden { display: none !important; }
+
+/* MENU DOOM */
+.menu-doom {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a0000 0%, #330000 100%);
+  border: 4px solid #ffff00;
+}
+
+.menu-content {
+  text-align: center;
+  animation: flicker 0.15s infinite;
+}
+
+.doom-title {
+  font-size: 3.5em;
+  color: #ff0000;
+  margin: 0;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+
+.doom-ascii {
+  font-size: 1.5em;
+  color: #ffff00;
+  margin: 10px 0;
+  letter-spacing: 2px;
+}
+
+.menu-text {
+  color: #ffff00;
+  font-size: 1.2em;
+  margin: 15px 0;
+  letter-spacing: 2px;
+}
+
+.menu-text.small {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.doom-button {
+  padding: 12px 30px;
+  font-size: 1.3em;
+  font-family: 'Orbitron', monospace;
+  background: #ffff00;
+  color: #000;
+  border: 3px solid #ffff00;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.1s;
+  letter-spacing: 2px;
+}
+
+.doom-button:hover {
+  background: #00ff00;
+  border-color: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.doom-button:active {
+  transform: scale(0.95);
+}
+
+/* INTERFAZ DOOM */
+.doom-ui {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+}
+
+canvas {
+  flex: 1;
+  background: linear-gradient(180deg, #000 0%, #330000 100%);
+  border: 2px solid #ffff00;
+  display: block;
+  width: 100%;
+  height: calc(100% - 80px);
+}
+
+/* HUD INFERIOR DOOM */
+.doom-hud {
+  height: 80px;
+  background: linear-gradient(180deg, #444 0%, #222 50%, #000 100%);
+  border-top: 3px solid #ffff00;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  color: #ffff00;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hud-left {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+}
+
+.hud-stat {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 12px;
+  border: 2px solid #ffff00;
+  text-align: center;
+}
+
+.hud-stat span {
+  display: block;
+  font-size: 20px;
+  font-weight: 900;
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.hud-center {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  animation: pulse 1s infinite;
+}
+
+.hud-right {
+  flex: 1;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 900;
+  color: #00ff00;
+}
+
+/* CONTROLES */
+.doom-controls {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 8px;
+  background: #1a1a1a;
+  border-top: 2px solid #ffff00;
+}
+
+.doom-controls.show {
+  display: grid;
+}
+
+.btn-doom {
+  padding: 8px;
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  font-weight: bold;
+  border: 2px solid;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: all 0.1s;
+  letter-spacing: 1px;
+}
+
+.btn-doom.red {
+  color: #ff0000;
+  border-color: #ff0000;
+  box-shadow: 0 0 5px #ff0000;
+}
+
+.btn-doom.red:active {
+  background: #ff0000;
+  color: #000;
+}
+
+.btn-doom.yellow {
+  color: #ffff00;
+  border-color: #ffff00;
+  box-shadow: 0 0 5px #ffff00;
+}
+
+.btn-doom.yellow:active {
+  background: #ffff00;
+  color: #000;
+}
+
+.btn-doom.green {
+  color: #00ff00;
+  border-color: #00ff00;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+.btn-doom.green:active {
+  background: #00ff00;
+  color: #000;
+}
+
+.btn-doom.blue {
+  color: #00ffff;
+  border-color: #00ffff;
+  box-shadow: 0 0 5px #00ffff;
+}
+
+.btn-doom.blue:active {
+  background: #00ffff;
+  color: #000;
+}
+
+/* ANIMACIONES */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* RESPONSIVE LANDSCAPE */
+@media (orientation: landscape) {
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .doom-ui {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .doom-title {
+    font-size: 2em;
+  }
+  
+  .menu-text {
+    font-size: 0.9em;
+  }
+  
+  .doom-button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}
