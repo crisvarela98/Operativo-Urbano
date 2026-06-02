@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4w7iyb1xvlyx"]
+
+[ext_resource type="Script" path="res://scripts/ui/MainMenu.gd"]
+[ext_resource type="Theme" resource="res://assets/ui_theme.tres"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+script = ExtResource("Script_1")
+theme = ExtResource("Theme_1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+color = Color.from_string("#0B1020", Color.BLACK)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_left = 0.5
+anchors_top = 0.5
+anchors_right = 0.5
+anchors_bottom = 0.5
+offset_left = -100.0
+offset_top = -200.0
+offset_right = 100.0
+offset_bottom = 200.0
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "OPERATIVO URBANO
+UNIDAD TÁCTICA"
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Misión Táctica Cooperativa"
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "▶ JUGAR"
+theme_override_font_sizes/font_size = 24
+
+[node name="TrainingButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "⚙ ENTRENAMIENTO"
+theme_override_font_sizes/font_size = 24
+
+[node name="EquipmentButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "🛡 EQUIPO"
+theme_override_font_sizes/font_size = 24
+
+[node name="UpgradesButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "⬆ MEJORAS"
+theme_override_font_sizes/font_size = 24
+
+[node name="OnlineButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "🌐 ONLINE (Próximamente)"
+theme_override_font_sizes/font_size = 24
+disabled = true
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/TrainingButton" to="." method="_on_training_pressed"]
+[connection signal="pressed" from="VBoxContainer/EquipmentButton" to="." method="_on_equipment_pressed"]
+[connection signal="pressed" from="VBoxContainer/UpgradesButton" to="." method="_on_upgrades_pressed"]

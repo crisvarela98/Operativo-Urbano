@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs8twvnkqrw4e"]
+
+[ext_resource type="Script" path="res://scripts/ui/BriefingScreen.gd"]
+
+[node name="BriefingScreen" type="Control"]
+layout_mode = 3
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+script = ExtResource("Script_1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+color = Color.from_string("#0B1020", Color.BLACK)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_left = 0.1
+anchors_top = 0.1
+anchors_right = 0.9
+anchors_bottom = 0.9
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "BRIEFING DE MISIÓN"
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
+[node name="MissionName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "EDIFICIO TOMADO"
+theme_override_font_sizes/font_size = 28
+
+[node name="Location" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Zona Sur - Buenos Aires"
+theme_override_font_sizes/font_size = 20
+
+[node name="Separator1" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ObjectivesLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "OBJETIVOS:"
+theme_override_font_sizes/font_size = 24
+
+[node name="ObjectivesList" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Objective1" type="Label" parent="VBoxContainer/ObjectivesList"]
+layout_mode = 2
+text = "• Reducir sospechosos"
+theme_override_font_sizes/font_size = 18
+
+[node name="Objective2" type="Label" parent="VBoxContainer/ObjectivesList"]
+layout_mode = 2
+text = "• Arrestar al menos 2"
+theme_override_font_sizes/font_size = 18
+
+[node name="Objective3" type="Label" parent="VBoxContainer/ObjectivesList"]
+layout_mode = 2
+text = "• Rescatar rehén"
+theme_override_font_sizes/font_size = 18
+
+[node name="Objective4" type="Label" parent="VBoxContainer/ObjectivesList"]
+layout_mode = 2
+text = "• Evitar bajas civiles"
+theme_override_font_sizes/font_size = 18
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "◀ ATRÁS"
+
+[node name="StartButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "▶ INICIAR MISIÓN"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/StartButton" to="." method="_on_start_pressed"]

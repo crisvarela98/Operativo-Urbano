@@ -1,0 +1,22 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are loss-less and defaults will be used.
+
+[application]
+config/name="Operativo Urbano: Unidad Táctica"
+config/version="0.1.0"
+run/main_scene="res://scenes/MainMenu.tscn"
+
+[display]
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/mode=2
+window/handheld_support/allow_horizontal=false
+window/size/initial_screen_orientation=1
+
+[physics]
+2d/default_gravity=0
+
+[autoload]
+GameManager="res://scripts/systems/GameManager.gd"
+NetworkManager="res://scripts/systems/NetworkManager.gd"

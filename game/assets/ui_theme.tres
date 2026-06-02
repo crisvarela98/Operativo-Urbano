@@ -1,0 +1,25 @@
+## theme.tres
+## Tema de UI para el juego
+
+[resource]
+script = SubResource("GDScript_1")
+
+# Colores globales
+colors/primary_color = Color.from_string("#1E6BFF", Color.WHITE)
+colors/secondary_color = Color.from_string("#C9A227", Color.WHITE)
+colors/danger_color = Color.from_string("#FF2A2A", Color.WHITE)
+colors/success_color = Color.from_string("#2AFF2A", Color.WHITE)
+colors/warning_color = Color.from_string("#FFD166", Color.WHITE)
+colors/background_color = Color.from_string("#0B1020", Color.BLACK)
+colors/text_color = Color.from_string("#F2F2F2", Color.WHITE)
+
+# Estilos de Label
+Label.theme_overrides/font_color = Color.from_string("#F2F2F2", Color.WHITE)
+
+# Estilos de Button
+Button.theme_overrides/font_sizes/font_size = 18
+Button.theme_overrides/colors/font_color = Color.from_string("#F2F2F2", Color.WHITE)
+
+# Estilos de Panel
+PanelContainer.theme_overrides/panel_bg_color = Color.from_string("#1B2440", Color.BLACK)
+PanelContainer.theme_overrides/panel_fg_color = Color.from_string("#05070D", Color.BLACK)

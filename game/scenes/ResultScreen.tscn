@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpe9v2s5fmh8f"]
+
+[ext_resource type="Script" path="res://scripts/ui/ResultScreen.gd"]
+
+[node name="ResultScreen" type="Control"]
+layout_mode = 3
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+script = ExtResource("Script_1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_left = 0.0
+anchors_top = 0.0
+anchors_right = 1.0
+anchors_bottom = 1.0
+color = Color.from_string("#0B1020", Color.BLACK)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_left = 0.1
+anchors_top = 0.1
+anchors_right = 0.9
+anchors_bottom = 0.9
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "MISIÓN COMPLETADA"
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+
+[node name="RankLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "RANGO: A"
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+
+[node name="Separator1" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="StatsContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="ArrestedLabel" type="Label" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+text = "Sospechosos Arrestados:"
+theme_override_font_sizes/font_size = 20
+
+[node name="ArrestedValue" type="Label" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+text = "2"
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
+
+[node name="RescuedLabel" type="Label" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+text = "Rehenes Rescatados:"
+theme_override_font_sizes/font_size = 20
+
+[node name="RescuedValue" type="Label" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+text = "1"
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+text = "Tiempo:"
+theme_override_font_sizes/font_size = 20
+
+[node name="TimeValue" type="Label" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+text = "05:23"
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
+
+[node name="RewardLabel" type="Label" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+text = "Pesos Ganados:"
+theme_override_font_sizes/font_size = 20
+
+[node name="RewardValue" type="Label" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+text = "$2500"
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "🔄 REINTENTAR"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "◀ MENÚ PRINCIPAL"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RetryButton" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_pressed"]

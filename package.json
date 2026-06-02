@@ -1,0 +1,36 @@
+{
+  "name": "operativo-urbano-project",
+  "version": "0.1.0",
+  "description": "Operativo Urbano: Unidad Táctica - Juego Táctico Cooperativo",
+  "scripts": {
+    "setup": "npm install && cd backend && npm install && cd ..",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "backend:install": "cd backend && npm install",
+    "game:start": "cd game && godot --path . --debug",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "mongo:start": "mongod",
+    "dev": "npm run backend:dev",
+    "docs": "echo 'Ver README.md, DEVELOPMENT.md y CONTRIBUTING.md'"
+  },
+  "keywords": [
+    "game",
+    "tactical",
+    "cooperative",
+    "mobile",
+    "godot",
+    "node.js"
+  ],
+  "author": "Operativo Urbano Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crisvarela98/Operativo-Urbano"
+  },
+  "bugs": {
+    "url": "https://github.com/crisvarela98/Operativo-Urbano/issues"
+  },
+  "homepage": "https://github.com/crisvarela98/Operativo-Urbano#readme"
+}
